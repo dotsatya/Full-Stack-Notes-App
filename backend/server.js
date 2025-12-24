@@ -29,10 +29,8 @@ const auth = (req, res, next) => {
   }
 };
 
-const CLIENT_ORIGINS = [
-  "https://full-stack-notes-app-lemon.vercel.app",
-  "http://localhost:5173"
-];
+
+const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:5173";
 
 app.use(cors({
   origin: CLIENT_ORIGIN,
